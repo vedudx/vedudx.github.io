@@ -42,6 +42,19 @@
     });
   });
 
+  const revealItems = document.querySelectorAll('.project-card, .publication-card, .blog-card');
+  if ('IntersectionObserver' in window) {
+    revealItems.forEach((item) => item.classList.add('reveal-on-scroll'));
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -30px' });
+    revealItems.forEach((item) => revealObserver.observe(item));
+  }
+
   // Keep the legacy project pages functional without reintroducing the old carousel.
   const legacyMenuButton = document.querySelector('.header__main-ham-menu-cont');
   const legacyMenu = document.querySelector('.header__sm-menu');

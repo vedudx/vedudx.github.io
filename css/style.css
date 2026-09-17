@@ -75,6 +75,8 @@ button { cursor: pointer; }
 .eyebrow, .section-index, .signal-card__label, .hero-visual__topline, .hero-strip, .project-card__meta, .publication-card__top, .blog-card__meta, .experience-item__date, .experience-tag, .skills-band > span, .research-thread__label { color: var(--muted-2); font: 500 1.1rem var(--mono); letter-spacing: .055em; text-transform: uppercase; }
 .eyebrow { display: flex; align-items: center; gap: 1rem; margin: 0 0 2rem; }
 .eyebrow-dot, .status-dot { width: .8rem; height: .8rem; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 .4rem var(--green-soft); }
+.status-dot { position: relative; flex: 0 0 auto; animation: statusPulse 3.2s ease-in-out infinite; }
+.status-dot::after { content: ""; position: absolute; inset: -.75rem; border: 2px solid color-mix(in srgb, var(--green) 74%, transparent); border-radius: 50%; opacity: 0; animation: statusRing 3.2s ease-out infinite; }
 .hero h1 { max-width: 69rem; margin: 0; color: var(--text); font-size: clamp(4.6rem, 6vw, 8.3rem); font-weight: 600; letter-spacing: -.07em; line-height: .98; }
 .hero-lede { max-width: 58rem; margin: 3rem 0 0; color: var(--muted); font-size: 1.85rem; line-height: 1.65; }
 .hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 1rem; margin-top: 3.4rem; }
@@ -90,6 +92,7 @@ button { cursor: pointer; }
 .hero-visual { position: relative; min-height: 47rem; overflow: hidden; border: 1px solid var(--line); border-radius: 2.2rem; background: linear-gradient(135deg, var(--surface) 0%, var(--surface-2) 100%); box-shadow: var(--shadow); }
 .hero-visual__topline { position: absolute; top: 2rem; left: 2.4rem; right: 2.4rem; display: flex; justify-content: space-between; gap: 1rem; font-size: .95rem; }
 .hero-visual__grid { position: absolute; inset: 0; opacity: .6; background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px); background-size: 5.4rem 5.4rem; mask-image: radial-gradient(circle at 55% 48%, #000 0%, transparent 68%); }
+.hero-visual__scan { position: absolute; top: -12rem; left: -18%; width: 136%; height: 1px; transform: rotate(-15deg); background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--accent) 78%, transparent), transparent); box-shadow: 0 0 1.6rem color-mix(in srgb, var(--accent) 40%, transparent); opacity: 0; animation: heroScan 5.8s ease-in-out infinite; }
 .signal-card { position: absolute; border: 1px solid var(--line); border-radius: 1.6rem; background: color-mix(in srgb, var(--surface) 92%, transparent); box-shadow: var(--shadow-soft); backdrop-filter: blur(8px); }
 .signal-card--main { top: 10rem; left: 7%; right: 13%; padding: 2.4rem; }
 .signal-card--main strong { display: block; margin: 1.4rem 0 .8rem; font-size: 2.8rem; letter-spacing: -.04em; line-height: 1.12; }
@@ -184,6 +187,8 @@ button { cursor: pointer; }
 .blog-card h3 { margin: 2.8rem 0 1rem; font-size: 2.1rem; letter-spacing: -.04em; line-height: 1.18; }
 .blog-card p { margin: 0 0 2rem; color: var(--muted); font-size: 1.35rem; line-height: 1.6; }
 .blog-card .text-link { margin-top: auto; }
+.reveal-on-scroll { opacity: 0; transform: translateY(8px); transition: opacity .55s ease, transform .55s ease; }
+.reveal-on-scroll.is-visible { opacity: 1; transform: translateY(0); }
 
 .blog-hero { padding-top: 9rem; padding-bottom: 7rem; }
 .blog-hero .heading-primary { max-width: 75rem; }
@@ -255,6 +260,25 @@ button { cursor: pointer; }
 .main-footer__icon { width: 2.4rem; height: 2.4rem; object-fit: contain; }
 .main-footer__lower { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--line); color: var(--muted); font-size: 1.1rem; }
 
+@keyframes heroScan {
+  0%, 12% { transform: translateY(0) rotate(-15deg); opacity: 0; }
+  24% { opacity: .7; }
+  48% { transform: translateY(35rem) rotate(-15deg); opacity: .18; }
+  64% { opacity: .62; }
+  84%, 100% { transform: translateY(57rem) rotate(-15deg); opacity: 0; }
+}
+
+@keyframes statusPulse {
+  0%, 100% { box-shadow: 0 0 0 .4rem var(--green-soft); }
+  50% { box-shadow: 0 0 0 .7rem color-mix(in srgb, var(--green-soft) 50%, transparent); }
+}
+
+@keyframes statusRing {
+  0%, 18% { transform: scale(.6); opacity: 0; }
+  30% { opacity: .9; }
+  72%, 100% { transform: scale(1.8); opacity: 0; }
+}
+
 @media (max-width: 900px) {
   .site-nav { display: none; }
   .menu-toggle { display: block; }
@@ -308,4 +332,6 @@ button { cursor: pointer; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+  .hero-visual__scan, .status-dot, .status-dot::after { animation: none; }
+  .reveal-on-scroll, .reveal-on-scroll.is-visible { opacity: 1; transform: none; transition: none; }
 }

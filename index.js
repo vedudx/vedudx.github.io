@@ -1,69 +1,50 @@
-// ---
-const hamMenuBtn = document.querySelector('.header__main-ham-menu-cont')
-const smallMenu = document.querySelector('.header__sm-menu')
-const headerHamMenuBtn = document.querySelector('.header__main-ham-menu')
-const headerHamMenuCloseBtn = document.querySelector(
-  '.header__main-ham-menu-close'
-)
-const headerSmallMenuLinks = document.querySelectorAll('.header__sm-menu-link')
+(() => {
+  const root = document.documentElement;
+  const themeToggle = document.querySelector('#theme-toggle');
+  const themeLabel = document.querySelector('#theme-label');
+  const menuToggle = document.querySelector('#menu-toggle');
+  const mobileMenu = document.querySelector('#mobile-menu');
 
-hamMenuBtn.addEventListener('click', () => {
-  if (smallMenu.classList.contains('header__sm-menu--active')) {
-    smallMenu.classList.remove('header__sm-menu--active')
-  } else {
-    smallMenu.classList.add('header__sm-menu--active')
-  }
-  if (headerHamMenuBtn.classList.contains('d-none')) {
-    headerHamMenuBtn.classList.remove('d-none')
-    headerHamMenuCloseBtn.classList.add('d-none')
-  } else {
-    headerHamMenuBtn.classList.add('d-none')
-    headerHamMenuCloseBtn.classList.remove('d-none')
-  }
-})
+  const setTheme = (theme) => {
+    root.dataset.theme = theme;
+    localStorage.setItem('theme', theme);
+    if (themeToggle) {
+      const isDark = theme === 'dark';
+      themeToggle.setAttribute('aria-pressed', String(isDark));
+      themeToggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+    }
+    if (themeLabel) themeLabel.textContent = theme === 'dark' ? 'Light mode' : 'Dark mode';
+  };
 
-for (let i = 0; i < headerSmallMenuLinks.length; i++) {
-  headerSmallMenuLinks[i].addEventListener('click', () => {
-    smallMenu.classList.remove('header__sm-menu--active')
-    headerHamMenuBtn.classList.remove('d-none')
-    headerHamMenuCloseBtn.classList.add('d-none')
-  })
-}
+  setTheme(root.dataset.theme || 'light');
+  themeToggle?.addEventListener('click', () => setTheme(root.dataset.theme === 'dark' ? 'light' : 'dark'));
 
-// ---
-const headerLogoConatiner = document.querySelector('.header__logo-container')
+  menuToggle?.addEventListener('click', () => {
+    const isOpen = mobileMenu?.classList.toggle('is-open');
+    menuToggle.setAttribute('aria-expanded', String(isOpen));
+    menuToggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+  });
 
-headerLogoConatiner.addEventListener('click', () => {
-  location.href = 'index.html'
-})
+  mobileMenu?.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('is-open');
+      menuToggle?.setAttribute('aria-expanded', 'false');
+      menuToggle?.setAttribute('aria-label', 'Open menu');
+    });
+  });
 
+  document.querySelectorAll('a[href^="#"]').forEach((link) => {
+    link.addEventListener('click', (event) => {
+      const target = document.querySelector(link.getAttribute('href'));
+      if (!target) return;
+      event.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
 
-let currentSlide = 0;
-const slides = document.querySelectorAll('#projects .projects__row');
-
-function changeSlide(direction) {
-  currentSlide += direction;
-  if (currentSlide < 0) currentSlide = slides.length - 1;
-  if (currentSlide >= slides.length) currentSlide = 0;
-
-  const offset = currentSlide * -100;
-  document.querySelector('#projects .projects-carousel__slides').style.transform = `translateX(${offset}%)`;
-}
-
-
-let currentSlide2 = 0;
-const slides2 = document.querySelectorAll('#Research_projects .projects__row');
-
-
-function changeSlide2(direction) {
-
-  currentSlide2 += direction;
-  if (currentSlide2 < 0) currentSlide2 = slides2.length - 1;
-  if (currentSlide2 >= slides2.length) currentSlide2 = 0;
-
-  const offset = currentSlide2 * -100;
-  const slideContainer = document.querySelector('#Research_projects .projects-carousel__slides');
-
-  slideContainer.style.transform = `translateX(${offset}%)`;
-  // document.querySelector('.projects-carousel__slides').style.transform = `translateX(${offset}%)`;
-}
+  // Keep the legacy project pages functional without reintroducing the old carousel.
+  const legacyMenuButton = document.querySelector('.header__main-ham-menu-cont');
+  const legacyMenu = document.querySelector('.header__sm-menu');
+  legacyMenuButton?.addEventListener('click', () => legacyMenu?.classList.toggle('header__sm-menu--active'));
+  legacyMenu?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => legacyMenu.classList.remove('header__sm-menu--active')));
+})();

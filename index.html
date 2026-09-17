@@ -3,649 +3,76 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Vedant's Portfolio</title>
-    <meta name="description" content="Portfolio Template for Developer" />
-
-    <link rel="stylesheet" href="css/style.css" />
-
+    <meta name="theme-color" content="#f7f8fb" />
+    <meta name="description" content="Vedant Vyas is a software engineer and researcher working across high-performance systems, robotics, and machine learning." />
+    <title>Vedant Vyas | Software Engineer & Researcher</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script>document.documentElement.dataset.theme = localStorage.getItem('theme') || 'light';</script>
   </head>
   <body>
-    <header class="header">
-      <div class="header__content">
-        <div class="header__logo-container">
-          <div class="header__logo-img-cont">
-            <img
-              src="./assets/png/myPic.jpg"
-              alt="Vedant Vyas Logo Image"
-              class="header__logo-img"
-            />
-          </div>
-          <span class="header__logo-sub">Vedant Vyas</span>
-        </div>
-        <div class="header__main">
-          <ul class="header__links">
-            <li class="header__link-wrapper">
-              <a href="./index.html" class="header__link"> Home </a>
-            </li>
-            <li class="header__link-wrapper">
-              <a href="./index.html#about" class="header__link">About </a>
-            </li>
-
-            <li class="header__link-wrapper">
-              <a href="assets/Tech_Resume.pdf" class="header__link">Resume </a>
-            </li>
-           
-            <li class="header__link-wrapper">
-              <a href="./index.html#projects" class="header__link">
-                Projects
-              </a>
-            </li>
-            <li class="header__link-wrapper">
-              <a href="./index.html#Research_projects" class="header__link">Research</a>
-            </li>
-
-            <li class="header__link-wrapper">
-              <a href="./index.html#contact" class="header__link"> Contact </a>
-            </li>
-          </ul>
-          <div class="header__main-ham-menu-cont">
-            <img
-              src="./assets/svg/ham-menu.svg"
-              alt="hamburger menu"
-              class="header__main-ham-menu"
-            />
-            <img
-              src="./assets/svg/ham-menu-close.svg"
-              alt="hamburger menu close"
-              class="header__main-ham-menu-close d-none"
-            />
-          </div>
-        </div>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+      <div class="container nav-shell">
+        <a class="brand" href="#top" aria-label="Vedant Vyas home"><span class="brand-mark">VV</span><span class="brand-copy"><strong>Vedant Vyas</strong><small>software · research</small></span></a>
+        <nav class="site-nav" aria-label="Primary navigation"><a href="#about">About</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#research">Research</a><a href="#writing">Blog</a></nav>
+        <div class="nav-actions"><button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to dark mode"><span class="theme-toggle__track" aria-hidden="true"><span class="theme-toggle__thumb"></span></span><span id="theme-label">Dark mode</span></button><button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu"><span></span><span></span></button></div>
       </div>
-      <div class="header__sm-menu">
-        <div class="header__sm-menu-content">
-          <ul class="header__sm-menu-links">
-            <li class="header__sm-menu-link">
-              <a href="./index.html"> Home </a>
-            </li>
-
-            <li class="header__sm-menu-link">
-              <a href="./index.html#about"> About </a>
-            </li>
-
-            <li class="header__sm-menu-link">
-              <a href="assets/Tech_Resume.pdf" class="header__link">Resume </a>
-            </li>
-
-            <li class="header__sm-menu-link">
-              <a href="./index.html#projects"> Projects </a>
-            </li>
-
-            <li class="header__sm-menu-link">
-              <a href="./index.html#Research_projects" class="header__link">Research</a>
-            </li>
-
-            <li class="header__sm-menu-link">
-              <a href="./index.html#contact"> Contact </a>
-            </li>
-          </ul>
-        </div>
-      </div>
+      <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation"><a href="#about">About</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#research">Research</a><a href="#writing">Blog</a><a href="assets/Resume_Vedant_Vyas_Software_Engineer_2026-09.pdf">Download resume</a></nav>
     </header>
-    <section class="home-hero">
-      <div class="home-hero__content">
-        <h1 class="heading-primary">Hey, My name is Vedant Vyas</h1>
-        <div class="home-hero__info_left">
-          <img src="./assets/png/myPic.jpg" alt="Vedant Vyas Logo Image" class="header__logo-img custom-img-style" />
-          <!-- <p class="text-primary">
-            I study computer science at the university of Alberta.
-          </p> -->
-        </div>
-        <div class="home-hero__cta">
-          <a href="assets/Tech_Resume.pdf" class="btn btn--bg">Download CV</a>
-        </div>
-      </div>
-      <div class="home-hero__socials">
-        <div class="home-hero__social">
-          <a href="https://www.linkedin.com/in/vedant-vyas2501/" class="home-hero__social-icon-link">
-            <img
-              src="./assets/png/linkedin-ico.png"
-              alt="icon"
-              class="home-hero__social-icon"
-            />
-          </a>
-        </div>
-        <div class="home-hero__social">
-          <a href="https://github.com/vedudx" class="home-hero__social-icon-link">
-            <img
-              src="./assets/png/github-ico.png"
-              alt="icon"
-              class="home-hero__social-icon"
-            />
-          </a>
-        </div>
-        <div class="home-hero__social">
-          <a href="https://www.hackerrank.com/vedudx?hr_r=1" class="home-hero__social-icon-link">
-            <img
-              src="./assets/png/hrank-ico.png"
-              alt="icon"
-              class="home-hero__social-icon"
-            />
-          </a>
-        </div>
-      </div>
-      <div class="home-hero__mouse-scroll-cont">
-        <div class="mouse"></div>
-      </div>
-    </section>
-    <section id="about" class="about sec-pad">
-      <div class="main-container">
-        <h2 class="heading heading-sec heading-sec__mb-med">
-          <span class="heading-sec__main">About Me</span>
-          <!-- <span class="heading-sec__sub">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic facilis
-            tempora explicabo quae quod deserunt eius sapiente
-          </span> -->
-        </h2>
-        <div class="experience-timeline">
-           <h3 class="experience-timeline__title" >Experience</h3> <!--  -->
-          <div class="timeline">
-            <div class="timeline__item">
-              <div class="timeline__content">
-                <img src="./assets/png/ANET.png" alt="ANET Logo" class="timeline__logo">
-                <h4>Jan 2024  - Present</h4>
-                <p> Software Engineer Intern </p>
-                <ul class="bullet-list">
-                  <li>Working on optimization for OS for High performance switches in Arista </li>
-                  <li>Wrote library code that is independent of hardware and will be used to monitor jobs completion time, and created
-                    histograms for detailed analysis.</li>
-                </ul>
-              </div>
-            </div>
-            <div class="timeline__item">
-              <div class="timeline__content">
-                <img src="./assets/png/amii.png" alt="AMII Logo" class="timeline__logo">
-                <h4>Mar 2023 - Jan 2024 </h4>
-                <p>Deep Learning Intern at AMII</p>
-                <ul class="bullet-list">
-                  <li> As part of the NLP group, I am a member of various reading groups (Meta learning, Neural Net optimization etc.,)</li>
-                  <li>I am currently exploring some new novel ways to improve knowledge distillation between sequence to sequence transformers.</li>
-                </ul>
-              </div>
-            </div>
-            <div class="timeline__item">
-              <div class="timeline__content">
-                <img src="./assets/png/nrc.jpeg" alt="NRC Logo" class="timeline__logo">
-                <h4>May 2023 - Dec 2024 </h4>
-                <p>Machine Learning Engineer (NRC CAN & CCG Ualberta)</p>
-                <ul class="bullet-list">
-                  <li> Working on a joint project with NRCCAN & CCG to train a Vision model to identify tree species using lidar data.</li>
-                  <li>Project’s goal is to identify susceptibility for various trees in impacted regions to burn during wildfire, which can assist
-                    firefighters</li>
-                </ul>
-              </div>
-            </div>
-            <div class="timeline__item">
-              <div class="timeline__content">
-                <img src="./assets/png/uofa.jpeg" alt="University of Alberta Logo" class="timeline__logo">
-                <h4>Sep 2022 - Apr 2023</h4>
-                <p>Teaching Assistant at University of Alberta </p>
-                <ul class="bullet-list">
-                  <li>Teaching assistant for Algorithms course, which mainly teaches design and analysis of algorithms along with Data Structures.</li>
-                  <li>As a TA for CMPUT 204 (Algorithms 1) & CMPUT 272 (Discrete Math), I conducted seminars and graded student assignments.</li>
-                  <li>As a TA for MATH 228 (Ring Theory), I graded assignments and helped students by answering their questions.</li>
-                </ul>
-              </div>
-            </div>
-            <!-- Add more timeline items here -->
-            
-            <div class="timeline__item">
-              <div class="timeline__content">
-                <img src="./assets/png/uofa.jpeg" alt="University of Alberta Logo" class="timeline__logo">
-                <h4>Apr 2022 - Aug 2022</h4>
-                <p>Research Assistant at Compilers Design & Optimization Lab, UAlberta</p>
-                <ul class="bullet-list">
-                  <li>Research Assistant under Dr Nelson Amaral and Dr João Paulo Labegalini de Carvalho.</li>
-                  <li>Worked on a unified MLIR dialect in collaboration with IBM that will allow the use of IBM MMA operations in MLIR to
-                    boost matrix multiplication operations which aim at improving the speed of compilation.</li>
-                  <li>Development work with IBM was done in C++ and tablegen, where I wrote a new MMA dialect in C++.</li>
-                  <li>Worked on the creation of assembly (Risc-V) coursework over the summer, that included writing grading scripts using
-                    multithreading and shell, using python to create animations, and lastly writing a solution in RISC-V machine instructions.</li>
-                </ul>
-              </div>
-            </div>
 
-            <div class="timeline__item">
-              <div class="timeline__content">
-                <img src="./assets/png/arcane.jpeg" alt="University of Alberta Logo" class="timeline__logo">
-                <h4>Apr 2022 - Aug 2022</h4>
-                <p>Co-founder at Arcane Lost</p>
-                <ul class="bullet-list">
-                  <li>Blogging website started with a friend of mine.</li>
-                  <li>Managed a team of six, where we had weekly scrum meetings.</li>
-                  <li>Wrote custom CSS, Javascript, and content for the website.</li>
-                </ul>
-             
-              </div>
-            </div>
+    <main id="main-content">
+      <section class="hero" id="top">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Available for thoughtful collaborations <span class="eyebrow-dot"></span></p>
+            <h1>I build systems that make intelligent machines useful.</h1>
+            <p class="hero-lede">Software engineer and researcher working at the intersection of high-performance systems, robotics, and machine learning. I like problems where the theory has to survive contact with real hardware.</p>
+            <div class="hero-actions"><a class="button button--primary" href="assets/Resume_Vedant_Vyas_Software_Engineer_2026-09.pdf">Download resume <span aria-hidden="true">↗</span></a><a class="button button--quiet" href="mailto:vedudx@gmail.com">Start a conversation <span aria-hidden="true">→</span></a></div>
+            <div class="hero-links" aria-label="External profiles"><a href="https://github.com/vedudx" target="_blank" rel="noreferrer noopener">GitHub <span>↗</span></a><a href="https://www.linkedin.com/in/vedant-vyas2501/" target="_blank" rel="noreferrer noopener">LinkedIn <span>↗</span></a><a href="https://scholar.google.ca/citations?hl=en&user=wDCUwPsAAAAJ" target="_blank" rel="noreferrer noopener">Google Scholar <span>↗</span></a></div>
+          </div>
+          <div class="hero-visual" aria-label="Current focus summary">
+            <div class="hero-visual__topline"><span>FIELD NOTES / 2026</span><span>53.5461° N, 113.4938° W</span></div><div class="hero-visual__grid" aria-hidden="true"></div>
+            <div class="signal-card signal-card--main"><span class="signal-card__label">Current signal</span><strong>From language to motion</strong><p>Turning natural-language intent into safe, executable behaviour for multi-robot systems.</p><div class="signal-card__footer"><span class="status-dot"></span> TUM · Dynamical Systems & Learning Lab</div></div>
+            <div class="signal-card signal-card--side"><span class="signal-card__label">Working across</span><ul><li><span>01</span> systems</li><li><span>02</span> learning</li><li><span>03</span> robotics</li></ul></div><div class="hero-visual__notation">f(x) = build · measure · learn</div>
           </div>
         </div>
-        
-        <div class="about__content">
-          <div class="about__content-main">
-            <h3 class="about__content-title">Get to know me!</h3>
-            <div class="about__content-details">
-              <p class="about__content-details-para">
-                Hey! It's
-                <strong>Vedant Vyas</strong>
-                and I'm a <strong> fourth year Honors Computer Science student</strong> studying at <strong>University of Alberta</strong>. I am passionate about <strong> mathematics, machine learning & software development</strong>.
-                I am happy to collaborate on any interesting software or research project. Feel free to reach out to me for collaboration.
-              </p>
-              <p class="about__content-details-para">
-               Feel free to
-                <strong>contact</strong> me here.
-              </p>
-            </div>
-            <a href="./#contact" class="btn btn--med btn--theme dynamicBgClr"
-              >Contact</a
-            >
-          </div>
-          <!-- <div class="experience-timeline">
-            <h3 class="experience-timeline__title">Experience Timeline</h3>
-            <div class="timeline">
-              <div class="timeline__item">
-                <div class="timeline__content">
-                  <h4>2023 - Present</h4>
-                  <p>Current Position at Company XYZ</p>
-                </div>
-              </div>
-              <div class="timeline__item">
-                <div class="timeline__content">
-                  <h4>2020 - 2023</h4>
-                  <p>Software Engineer at Company ABC</p>
-                </div>
-              </div>
-              Add more timeline items here
-            </div>
-          </div> -->
-          
-          <div class="about__content-skills">
-            <h3 class="about__content-title">My Skills</h3>
-            <div class="skills">
-              <div class="skills__skill">Python</div>
-              <div class="skills__skill">C++</div>
-              <div class="skills__skill">GIT</div>
-              <div class="skills__skill">Pytorch</div>
-              <div class="skills__skill">Numpy</div>
-              <div class="skills__skill">Pandas</div>
-              <div class="skills__skill">Docker</div>
-              <div class="skills__skill">TensorFlow</div>
-              <div class="skills__skill">Android Studio</div>
-              <div class="skills__skill">Julia</div>
-              <div class="skills__skill">Android</div>
-              <div class="skills__skill">JavaScript</div>
-              <div class="skills__skill">React</div>
-              <div class="skills__skill">SQL</div>
-              <div class="skills__skill">MongoDB</div>
-              <div class="skills__skill">C</div>
-              <div class="skills__skill">Github</div>
-              <div class="skills__skill">bash</div>
-              <div class="skills__skill">HTML</div>
-              <div class="skills__skill">CSS</div>
-              <div class="skills__skill">Web Development</div>
-              <div class="skills__skill">LLVM</div>
-              <div class="skills__skill">MLIR</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="projects" class="projects sec-pad">
-      <div class="main-container">
-        <h2 class="heading heading-sec heading-sec__mb-bg">
-          <span class="heading-sec__main">Projects</span>
-          <span class="heading-sec__sub">
-            Here are some interesting projects I have worked over the years.
-          </span>
-        </h2>
+        <div class="container hero-strip"><span>Currently</span><strong>Software Engineer @ Arista Networks</strong><span class="hero-strip__divider"></span><span>Research Assistant @ TUM</span><a href="#experience">View the thread <span aria-hidden="true">↓</span></a></div>
+      </section>
 
-        <div class="projects__content">
-          <div class="projects-carousel">
-            <div class="projects-carousel__slides">
-              <!-- Slide 1 -->
-              <div class="projects__row">
-                <!-- Repeat the existing content for each project here -->  
-                <div class="projects__row-img-amog">
-                  <img
-                    src="./assets/png/shopApp.png"
-                    alt="Software Screenshot"
-                    class="projects__row-img"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="projects__row-content">
-                  <h3 class="projects__row-content-title">Meal Planner App</h3>
-                  <p class="projects__row-content-desc">
-                    This is a meal planner app, which lets users organize the ingredients at home, add recipes, plan meals and has an automated
-                    shopping list, which is created based on the meal plan for the week.We used google firebase to store the user data (which is linked with their login credentials). App was primarily written in
-                    Java using the Android Studio framework. To understand the functioning of the app better, read this.
-                  </p>
-                  <div class="button-container">
-                    <a href="https://github.com/CMPUT301F22T08/AndroidImpact" class="btn btn--med btn--theme dynamicBgClr" target="_blank">Github</a>
-                    <a href="https://github.com/CMPUT301F22T08/AndroidImpact/wiki/Part-4-UI-Mockup-Storyboard" class="btn btn--med btn--theme dynamicBgClr" target="_blank"> Video </a>
-                  </div>
-               
-                </div>
-              </div>
-              <!-- Slide 2 -->
-              <div class="projects__row">
-                <div class="projects__row-img-amog">
-                  <img
-                    src="./assets/png/latex.png"
-                    alt="Software Screenshot"
-                    class="projects__row-img"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="projects__row-content">
-                  <h3 class="projects__row-content-title">Latex Text-to-Speech engine</h3>
-                  <p class="projects__row-content-desc">
-                    This project aims to tackle the poor quality of text to speech apps when dealing with latex equations. 
-                    It is deployed and hosted on Google Cloud. I used ANTLR4 to build my own lexer and parser to map latex equations to english text.
-                    Website supports text, png and jpeg, and uses Google cloud text to speech to convert parsed text to audio.
-                  </p>
-                  <div class="button-container">
-                    <a href="https://github.com/3iq-hacks/math-tts" class="btn btn--med btn--theme dynamicBgClr" target="_blank">Github</a>
-                    <a href="https://math-tts.vercel.app/" class="btn btn--med btn--theme dynamicBgClr" target="_blank">Website</a>
-                  </div>
-                </div>
-              </div>
+      <section class="section section--tint" id="about"><div class="container about-layout"><div class="section-intro"><p class="section-index">01 / profile</p><h2>Curious about the layer between an idea and a working system.</h2></div><div class="about-copy"><p>I am Vedant, a computer scientist who enjoys moving between abstraction levels: from compiler IRs and network silicon to learning systems and the physical world. My work tends to be practical, research-minded, and shaped by a simple question: <em>what would make this robust enough to use?</em></p><p>I graduated from the University of Alberta with a B.Sc. Honors in Computer Science, and I am happiest in teams that value clear thinking, careful experiments, and software that earns its complexity.</p><div class="principles"><div><span>01</span><strong>Make the boundary clear</strong><small>Good interfaces let ideas travel.</small></div><div><span>02</span><strong>Measure the real thing</strong><small>Performance is a property of context.</small></div><div><span>03</span><strong>Leave a useful trail</strong><small>Research is better when it is legible.</small></div></div></div></div></section>
 
-               <!-- Slide 3 -->
-              <div class="projects__row">
-                <!-- Content for project 2 -->
-                <div class="projects__row-img-amog">
-                  <img
-                    src="./assets/png/amongus.png "
-                    alt="Software Screenshot"
-                    class="projects__row-img"
-                    loading="lazy"
-                  />
-                </div>
+      <section class="section" id="experience"><div class="container"><div class="section-heading"><div><p class="section-index">02 / experience</p><h2>Work history</h2></div><p class="section-heading__note">A timeline of building, investigating, and teaching.</p></div><div class="experience-list">
+        <article class="experience-item experience-item--current"><div class="experience-item__date">Jul 2025 - now</div><div class="experience-item__marker"></div><div class="experience-item__body"><div class="experience-item__top"><div><h3>Software Engineer</h3><p>Arista Networks <span>·</span> Vancouver, BC</p></div><span class="experience-tag">systems</span></div><ul><li>Develop and validate low-level software for ASIC and FPGA-based high-performance switching platforms, including congestion monitoring for Broadcom Tomahawk 6 ASICs.</li><li>Migrated package builds to Bazel, reducing build times by 50% and improving developer iteration speed.</li></ul></div></article>
+        <article class="experience-item experience-item--current"><div class="experience-item__date">Jun 2024 - now</div><div class="experience-item__marker"></div><div class="experience-item__body"><div class="experience-item__top"><div><h3>Research Assistant, Dynamical Systems & Learning Lab</h3><p>Technical University of Munich <span>·</span> Munich, Germany</p></div><span class="experience-tag">robotics</span></div><ul><li>Building a framework and method to use LLMs to control a swarm of drones for choreography applications using Crazyflie.</li><li>Developed template functions translated into drone motion commands and applied ROS for trajectory planning and multi-robot control.</li></ul></div></article>
+        <article class="experience-item"><div class="experience-item__date">Jan - Jun 2024</div><div class="experience-item__marker"></div><div class="experience-item__body"><div class="experience-item__top"><div><h3>Software Engineering Intern</h3><p>Arista Networks <span>·</span> Vancouver, BC</p></div><span class="experience-tag">performance</span></div><ul><li>Used TACC, C++, and Python to work on OS optimization for high-performance network switches.</li><li>Wrote hardware-independent library code to monitor job completion times and generated histograms for detailed performance analysis.</li></ul></div></article>
+        <article class="experience-item"><div class="experience-item__date">May 2023 - Jan 2024</div><div class="experience-item__marker"></div><div class="experience-item__body"><div class="experience-item__top"><div><h3>Research Assistant, NLP Group</h3><p>Alberta Machine Intelligence Institute <span>·</span> Edmonton, AB</p></div><span class="experience-tag">NLP</span></div><ul><li>Proposed and experimented with solutions in knowledge distillation for autoregressive transformers.</li><li>Used Python, PyTorch, NLTK, and Hugging Face across model development and experimentation workflows.</li></ul></div></article>
+        <article class="experience-item"><div class="experience-item__date">May 2023 - Jan 2024</div><div class="experience-item__marker"></div><div class="experience-item__body"><div class="experience-item__top"><div><h3>Machine Learning Engineer</h3><p>NRC CAN & CCG, University of Alberta <span>·</span> Edmonton, AB</p></div><span class="experience-tag">applied ML</span></div><ul><li>Collaborated on a LiDAR transformer model for accurate tree species identification.</li><li>Targeted real-time species identification to assess wildfire vulnerability and support firefighting strategy development.</li></ul></div></article>
+        <article class="experience-item"><div class="experience-item__date">May - Aug 2022</div><div class="experience-item__marker"></div><div class="experience-item__body"><div class="experience-item__top"><div><h3>Research Assistant, High-Performance Computing Group</h3><p>University of Alberta <span>·</span> Edmonton, AB</p></div><span class="experience-tag">compilers</span></div><ul><li>Collaborated with IBM to design and develop a unified MLIR dialect for matrix multiplication on the IBM Power10 MMA unit.</li><li>Applied C++ and Tablegen to build production-quality compiler components.</li></ul></div></article>
+      </div><div class="skills-band"><span>Toolkit</span><div class="skill-list"><span>C++</span><span>Python</span><span>PyTorch</span><span>ROS</span><span>Bazel</span><span>MLIR</span><span>Tablegen</span><span>TensorFlow</span><span>Hugging Face</span><span>JavaScript</span><span>SQL</span><span>Docker</span></div></div></div></section>
 
-                
+      <section class="section section--tint" id="projects"><div class="container"><div class="section-heading"><div><p class="section-index">03 / selected work</p><h2>Projects</h2></div><p class="section-heading__note">Small products, research prototypes, and tools built to be used.</p></div><div class="project-grid">
+        <article class="project-card"><div class="project-card__visual"><img src="assets/png/shopApp.png" alt="Meal Planner app screens" loading="lazy" /><span class="project-card__number">01</span></div><div class="project-card__body"><div class="project-card__meta"><span>Android · Firebase</span><span>2022</span></div><h3>Meal Planner App</h3><p>A meal planning workflow that turns recipes and weekly plans into an automated shopping list.</p><a class="text-link" href="https://github.com/CMPUT301F22T08/AndroidImpact" target="_blank" rel="noreferrer noopener">View on GitHub <span>↗</span></a></div></article>
+        <article class="project-card"><div class="project-card__visual project-card__visual--dark"><img src="assets/png/latex.png" alt="LaTeX text to speech interface" loading="lazy" /><span class="project-card__number">02</span></div><div class="project-card__body"><div class="project-card__meta"><span>ANTLR · Google Cloud</span><span>2023</span></div><h3>LaTeX Text-to-Speech</h3><p>A parser and speech pipeline that turns mathematical notation into natural language and audio.</p><a class="text-link" href="https://math-tts.vercel.app/" target="_blank" rel="noreferrer noopener">Open the project <span>↗</span></a></div></article>
+        <article class="project-card"><div class="project-card__visual"><img src="assets/png/amongus.png" alt="Imposter Detector project illustration" loading="lazy" /><span class="project-card__number">03</span></div><div class="project-card__body"><div class="project-card__meta"><span>React · Flask</span><span>2022</span></div><h3>Imposter Detector</h3><p>A playful speech-to-text experiment that surfaces suspicious trigger words in real time.</p><a class="text-link" href="https://imposter-detector.vercel.app/" target="_blank" rel="noreferrer noopener">Open the project <span>↗</span></a></div></article>
+        <article class="project-card"><div class="project-card__visual project-card__visual--terminal"><img src="assets/png/terminal.png" alt="Terminal interface for a movie database" loading="lazy" /><span class="project-card__number">04</span></div><div class="project-card__body"><div class="project-card__meta"><span>Python · MongoDB</span><span>2022</span></div><h3>Movie Database Terminal App</h3><p>A command-line data processing tool for searching, updating, and managing a movie database.</p><a class="text-link" href="https://github.com/joshuanianji/TerminalIMDB" target="_blank" rel="noreferrer noopener">View the code <span>↗</span></a></div></article>
+      </div></div></section>
 
-                <div class="projects__row-content">
-                  <h3 class="projects__row-content-title">Imposter Detector 2022</h3>
-                  <p class="projects__row-content-desc">
-                    Website lets the user record audio and then uses google’s app engine to convert speech to text
-                    .Pydub adds a funny vine boom sound effect every time there is a sus trigger word in speech
-                    .Used flask for backend, google app engine for deployment, and React for frontend
-                  </p>
-                  <div class="button-container">
-                    <a href="https://github.com/3iq-hacks/imposter-detector-2022" class="btn btn--med btn--theme dynamicBgClr" target="_blank">Github</a>
-                    <a href="https://imposter-detector.vercel.app/" class="btn btn--med btn--theme dynamicBgClr" target="_blank">Website</a>
-                  </div>
-      
-                </div>
-                
-                
-                
-                
-              </div>
-              <!-- Add more slides as needed -->
-              <div class="projects__row">
-                <div class="projects__row-img-amog">
-                  <img
-                    src="./assets/png/terminal.png"
-                    alt="Software Screenshot"
-                    class="projects__row-img"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="projects__row-content">
-                  <h3 class="projects__row-content-title">Movie Database Terminal App</h3>
-                  <p class="projects__row-content-desc">
-                    This is a movie and cast member data processing app that allows users to manage a database of movies, search for all the
-                    movies using keywords, add movies, update info related to movies and some other operations. <br> Used pymongo(mongodb) for query processing and database management, python for preprocessing.
-                    
-                  </p>
+      <section class="section" id="research"><div class="container"><div class="section-heading"><div><p class="section-index">04 / research</p><h2>Research & publications</h2></div><a class="text-link" href="https://scholar.google.ca/citations?hl=en&user=wDCUwPsAAAAJ" target="_blank" rel="noreferrer noopener">Open Google Scholar <span>↗</span></a></div><div class="research-overview"><div><p>My research lives where learning systems meet constraints: safe motion, continual adaptation, and tools that make experimentation easier.</p></div><div class="metrics"><div><strong>28</strong><span>citations</span></div><div><strong>3</strong><span>h-index</span></div><div><strong>4</strong><span>works listed</span></div></div></div><div class="publication-grid">
+        <article class="publication-card publication-card--featured"><div class="publication-card__top"><span>2025 · IEEE Robotics and Automation Letters</span><span class="citation-count">20 citations</span></div><h3>SwarmGPT: Combining large language models with safe motion planning for drone swarm choreography</h3><p>Language-based choreography augmented with a safety filter that makes minimal corrections when feasibility constraints are violated.</p><a class="text-link" href="https://ieeexplore.ieee.org/abstract/document/11197931/" target="_blank" rel="noreferrer noopener">Read the paper <span>↗</span></a></article>
+        <article class="publication-card"><div class="publication-card__top"><span>2024 · arXiv</span><span class="citation-count">5 citations</span></div><h3>SwarmGPT-Primitive: A language-driven choreographer for drone swarms using safe motion primitive composition</h3><p>Composing deployable drone choreographies from language and a library of safe motion primitives.</p><a class="text-link" href="https://arxiv.org/abs/2412.08428" target="_blank" rel="noreferrer noopener">Read the preprint <span>↗</span></a></article>
+        <article class="publication-card"><div class="publication-card__top"><span>2025 · arXiv</span><span class="citation-count">3 citations</span></div><h3>The Cell Must Go On: Agar.io for Continual Reinforcement Learning</h3><p>AgarCL, a non-episodic, high-dimensional platform for studying agents that learn in changing environments.</p><a class="text-link" href="https://arxiv.org/abs/2505.18347" target="_blank" rel="noreferrer noopener">Read the preprint <span>↗</span></a></article>
+        <article class="publication-card"><div class="publication-card__top"><span>2024 · NeurIPS Datasets & Benchmarks</span><span class="citation-count">publication</span></div><h3>Using Unity to Help Solve Reinforcement Learning</h3><p>The United Unity Universe, an open-source toolkit for creating varied reinforcement learning environments in Unity.</p><a class="text-link" href="https://proceedings.neurips.cc/paper_files/paper/2024/hash/04c0c541d936f7cbfbb21085116236cd-Abstract-Datasets_and_Benchmarks_Track.html" target="_blank" rel="noreferrer noopener">Read the paper <span>↗</span></a></article>
+      </div><div class="research-thread"><div class="research-thread__label">Research thread</div><div><h3>Language → planning → motion</h3><p>My current line of work explores how expressive, high-level intent can become reliable behaviour in multi-agent systems.</p></div><a class="button button--quiet" href="mailto:vedudx@gmail.com">Talk research <span>→</span></a></div></div></section>
 
-                  <div class="button-container">
-                    <a href="https://github.com/joshuanianji/TerminalIMDB" class="btn btn--med btn--theme dynamicBgClr" target="_blank">Github</a>
-                    <a href="https://github.com/joshuanianji/TerminalIMDB/blob/main/submit/Report.pdf" class="btn btn--med btn--theme dynamicBgClr" target="_blank">Report</a>
-                  </div>
-           
-                </div>
-              </div>
-            </div>
-            </div>
-            <button class="projects-carousel__button projects-carousel__button--prev" onclick="changeSlide(-1)">&#8592;</button>
-            <button class="projects-carousel__button projects-carousel__button--next" onclick="changeSlide(1)">&#8594;</button>
-            
-          </div>
-      
-      </div>
-    </section>
+      <section class="section section--tint" id="writing"><div class="container"><div class="section-heading"><div><p class="section-index">05 / blog</p><h2>Notes from the workbench</h2></div><a class="text-link" href="blog.html">Read all notes <span>↗</span></a></div><div class="blog-grid"><article class="blog-card"><div class="blog-card__meta"><span>Systems note</span><span>06 min read</span></div><h3>What a compiler IR teaches us about ML systems</h3><p>Abstractions work best when they preserve the information the next layer actually needs.</p><a class="text-link" href="blog.html#compiler-ir">Read note <span>↗</span></a></article><article class="blog-card blog-card--accent"><div class="blog-card__meta"><span>Research note</span><span>08 min read</span></div><h3>From language to flight</h3><p>Designing a bridge between expressive instructions and the safety constraints of a drone swarm.</p><a class="text-link" href="blog.html#language-to-flight">Read note <span>↗</span></a></article><article class="blog-card"><div class="blog-card__meta"><span>Building in public</span><span>04 min read</span></div><h3>A portfolio should explain how you think</h3><p>A small argument for showing the questions, constraints, and tradeoffs behind the work.</p><a class="text-link" href="blog.html#portfolio">Read note <span>↗</span></a></article></div></div></section>
 
+      <section class="section contact-section" id="contact"><div class="container contact-grid"><div><p class="section-index">06 / contact</p><h2>Have a hard problem or a good question?</h2><p class="contact-lede">I am always open to interesting software, research, and collaboration conversations.</p><a class="contact-email" href="mailto:vedudx@gmail.com">vedudx@gmail.com <span>↗</span></a></div><form class="contact-form" action="https://forms.un-static.com/forms/ea0811a219ee6b0ebacb064c55b3f5be0ce70fc8" method="post"><label for="name">Name</label><input id="name" name="name" type="text" placeholder="Your name" required /><label for="email">Email</label><input id="email" name="email" type="email" placeholder="you@example.com" required /><label for="message">Message</label><textarea id="message" name="message" rows="4" placeholder="What are you working on?" required></textarea><button class="button button--primary" type="submit">Send message <span>→</span></button></form></div></section>
+    </main>
 
-    <section id="Research_projects" class="projects sec-pad">
-      <div class="main-container">
-        <h2 class="heading heading-sec heading-sec__mb-bg">
-          <span class="heading-sec__main">Research Projects</span>
-          <span class="heading-sec__sub">
-            Here are some interesting Research projects I have worked recently.
-          </span>
-        </h2>
-
-        <div class="projects__content">
-          <div class="projects-carousel">
-            <div class="projects-carousel__slides">
-              <!-- Slide 1 -->
-              <div class="projects__row">
-                <!-- Repeat the existing content for each project here -->  
-                <div class="projects__row-img-amog">
-                  <img
-                    src="./assets/png/mlir.png"
-                    alt="Software Screenshot"
-                    class="projects__row-img"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="projects__row-content">
-                  <h3 class="projects__row-content-title">MMA Dialect in MLIR</h3>
-                  <p class="projects__row-content-desc">
-                  This project is a dialect written for the IBM Power 10 MMA unit in MLIR.
-                  Dialects are essential in the MLIR ecosystem, allowing the creation of new attributes, operations, and types for a wide range of abstractions, from arithmetic to pattern rewrites. They are a fundamental and versatile aspect of MLIR's structure.
-                  As part of writing this dialect in MLIR, I wrote tensor operations like outer product, matrix multiplication etc in MLIR.
-                  Objective of the project was to provide an end to end compiling solution of tensorflow/pytorch graphs via MLIR to IBM MMA unit.
-                  </p>
-                  <div class="button-container">
-                    <a href="https://github.com/vedudx/llvm-project" class="btn btn--med btn--theme dynamicBgClr" target="_blank">Github</a>
-                    <a href="https://mlir.llvm.org/docs/Dialects/" class="btn btn--med btn--theme dynamicBgClr" target="_blank"> More Info </a> 
-                  </div>
-               
-                </div>
-              </div>
-              <!-- Slide 2 -->
-              <div class="projects__row">
-                <div class="projects__row-img-amog">
-                  <img
-                    src="./assets/png/X.png"
-                    alt="Software Screenshot"
-                    class="projects__row-img"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="projects__row-content">
-                  <h3 class="projects__row-content-title">Twitter Sentiment Analysis</h3>
-                  <p class="projects__row-content-desc">
-                    In this project I perform tweet sentiment analysis on tweets related to coronavirus.
-                    One of the objectives I was exploring was the prevalence of zipf’s distribution in such a dataset. If hashtags in such a dataset follow zipf's distribution.
-                    Other objectives were comparing multiple approaches including statistical methods for sentiment classification and fake news classification.
-                    
-                  </p>
-                  <div class="button-container">
-                    <a href="https://github.com/vedudx/TwitterSentimentAnalysis" class="btn btn--med btn--theme dynamicBgClr" target="_blank">Github</a>
-                    <a href="https://math-tts.vercel.app/" class="btn btn--med btn--theme dynamicBgClr" target="_blank">Website</a>
-                  </div>
-                </div>
-              </div>
-
-           
-                </div>
-              </div>
-            </div>
-            </div>
-            <button class="projects-carousel__button_2 projects-carousel__button--prev" onclick="changeSlide2(-1)">&#8592;</button>
-            <button class="projects-carousel__button_2 projects-carousel__button--next" onclick="changeSlide2(1)">&#8594;</button> 
-            
-          </div>
-      
-      </div>
-    </section>
-
-    <section id="contact" class="contact sec-pad dynamicBg">
-      <div class="main-container">
-        <h2 class="heading heading-sec heading-sec__mb-med">
-          <span class="heading-sec__main heading-sec__main--lt">Contact</span>
-          <span class="heading-sec__sub heading-sec__sub--lt">
-           Feel free to email me or contact me on linkedin. I am always open to new opportunities & collaboration. You can even use the contact form below
-          </span>
-        </h2>
-        <div class="contact__form-container">
-          <form action="https://forms.un-static.com/forms/ea0811a219ee6b0ebacb064c55b3f5be0ce70fc8" method="post"  class="contact__form">
-            <div class="contact__form-field">
-              <label class="contact__form-label" for="name">Name</label>
-              <input
-                required
-                placeholder="Enter Your Name"
-                type="text"
-                class="contact__form-input"
-                name="name"
-                id="name"
-              />
-            </div>
-            <div class="contact__form-field">
-              <label class="contact__form-label" for="email">Email</label>
-              <input
-                required
-                placeholder="Enter Your Email"
-                type="text"
-                class="contact__form-input"
-                name="email"
-                id="email"
-              />
-            </div>
-            <div class="contact__form-field">
-              <label class="contact__form-label" for="message">Message</label>
-              <textarea
-                required
-                cols="30"
-                rows="10"
-                class="contact__form-input"
-                placeholder="Enter Your Message"
-                name="message"
-                id="message"
-              ></textarea>
-            </div>
-            <button type="submit" class="btn btn--theme contact__btn">
-              Submit
-            </button>
-          </form>
-          <div class="static-form">
-            <p><small>Powered by <a rel="nofollow" href="Un-static Forms">Un-static Forms</a></small></p>
-          </div> 
-        </div>
-      </div>
-    </section>
-    <footer class="main-footer">
-      <div class="main-container">
-        <div class="main-footer__upper">
-          <div class="main-footer__row main-footer__row-1">
-            <h2 class="heading heading-sm main-footer__heading-sm">
-              <span>Social</span>
-            </h2>
-            <div class="main-footer__social-cont">
-              <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/vedant-vyas2501/">
-                <img
-                  class="main-footer__icon"
-                  src="./assets/png/linkedin-ico.png"
-                  alt="icon"
-                />
-              </a>
-              <a target="_blank" rel="noreferrer" href="https://github.com/vedudx">
-                <img
-                  class="main-footer__icon"
-                  src="./assets/png/github-ico.png"
-                  alt="icon"
-                />
-              </a>
-              <!-- <a target="_blank" rel="noreferrer" href="#">
-                <img
-                  class="main-footer__icon"
-                  src="./assets/png/twitter-ico.png"
-                  alt="icon"
-                />
-              </a> -->
-              <a target="_blank" rel="noreferrer" href="#">
-                <img
-                  class="main-footer__icon"
-                  src="./assets/png/yt-ico.png"
-                  alt="icon"
-                />
-              </a>
-            </div>
-          </div>
-          <div class="main-footer__row main-footer__row-2">
-            <h4 class="heading heading-sm text-lt">Contact</h4>
-            <p class="main-footer__short-desc">
-              <div class="footer-container">
-                <a target="_blank" rel="noreferrer" href="#">
-                  <img
-                  class="main-footer_left_icon"
-                  src="./assets/png/email.jpeg"
-                  alt="icon"
-                  />
-                </a>
-                <span class="email-text">vvyas1 (at) ualberta (dot) ca </span>
-                <br> <br> <br>
-              </div>
-              <div class="footer-container">
-                <a target="_blank" rel="noreferrer" href="#">
-                  <img
-                  class="main-footer_left_icon"
-                  src="./assets/png/phone3.png"
-                  alt="icon"
-                  />
-                </a>
-                <span class="email-text">+1-825-461-4716 </span>
-                
-              </div>
-            
-            </p>
-          </div>
-        </div>
-
-        <!-- If you give me some credit or shoutout here by linking to my website, then it will be a big thing for me and will help me a lot :) -->
-        <div class="main-footer__lower">
-          &copy; Copyright 2023. <br> 
-          Inspired by this
-          <a rel="noreferrer" target="_blank" href="https://github.com/rammcodes/Dopefolio"
-            >github repository</a
-          >
-          
-        </div>
-      </div>
-    </footer>
-
-    <script src="./index.js"></script>
+    <footer class="site-footer"><div class="container site-footer__inner"><div><a class="brand brand--footer" href="#top"><span class="brand-mark">VV</span><span class="brand-copy"><strong>Vedant Vyas</strong><small>software · research</small></span></a><p>Building useful systems at the edge of intelligence and reality.</p></div><div class="footer-links"><a href="https://github.com/vedudx" target="_blank" rel="noreferrer noopener">GitHub</a><a href="https://www.linkedin.com/in/vedant-vyas2501/" target="_blank" rel="noreferrer noopener">LinkedIn</a><a href="https://scholar.google.ca/citations?hl=en&user=wDCUwPsAAAAJ" target="_blank" rel="noreferrer noopener">Scholar</a><a href="assets/Resume_Vedant_Vyas_Software_Engineer_2026-09.pdf">Resume</a></div></div><div class="container site-footer__bottom"><span>© 2026 Vedant Vyas</span><span>Made with care and a little curiosity.</span></div></footer>
+    <script src="index.js"></script>
   </body>
 </html>

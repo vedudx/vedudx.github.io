@@ -187,7 +187,7 @@ button { cursor: pointer; }
 .blog-card h3 { margin: 2.8rem 0 1rem; font-size: 2.1rem; letter-spacing: -.04em; line-height: 1.18; }
 .blog-card p { margin: 0 0 2rem; color: var(--muted); font-size: 1.35rem; line-height: 1.6; }
 .blog-card .text-link { margin-top: auto; }
-.reveal-on-scroll { opacity: 0; transform: translateY(8px); transition: opacity .55s ease, transform .55s ease; }
+.reveal-on-scroll { opacity: 0; transform: translateY(6px); transition: opacity .55s ease, transform .55s ease; }
 .reveal-on-scroll.is-visible { opacity: 1; transform: translateY(0); }
 
 .blog-hero { padding-top: 9rem; padding-bottom: 7rem; }
